@@ -1,0 +1,7 @@
+PLAN.md
+venv
+*.jpg
+*.txt
+*.png
+*.apkg
+__pycache__
