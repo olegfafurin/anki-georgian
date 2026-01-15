@@ -55,7 +55,7 @@ python3 src/anki_ge.py create-deck new_words.txt --update "My_Georgian_Deck.apkg
 ### Options
 *   `--log {DEBUG,INFO,WARNING,ERROR}`: Set logging level (default: INFO).
 
-## Example
+## Example 1
 
 ### Georgian Frequency Dictionary Set
 
@@ -73,3 +73,21 @@ python3 src/anki_ge.py create-deck dict/ge_freq_dict.txt --name "Georgian Freque
 
 ![Anki Deck Preview](images/illustrations/deck.jpg)
 
+## Example 2
+
+### Add a word from a specific picture to the existing deck
+
+#### 1. Extract Georgian text from the image
+```bash
+python3 src/anki_ge.py --log=INFO extract images/gadatsveva.jpg -o text/gadatsveva.txt
+```
+
+#### 2. Transliterate the detected word
+```bash
+python3 src/anki_ge.py --log=INFO transliterate text/gadatsveva.txt -o dict/gadatsveva_dict.txt
+```
+
+#### 3. Update the existing deck
+```bash
+python3 src/anki_ge.py --log=INFO create-deck dict/gadatsveva_dict.txt --update "Georgian_Frequency_Deck.apkg" -n "Georgian Frequency Deck"
+```

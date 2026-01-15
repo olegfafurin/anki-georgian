@@ -1,7 +1,7 @@
 PLAN.md
 venv
-*.jpg
-*.txt
-*.png
+/*.jpg
+/*.txt
+/*.png
 *.apkg
 __pycache__
