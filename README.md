@@ -75,7 +75,9 @@ python3 src/anki_ge.py create-deck dict/ge_freq_dict.txt --name "Georgian Freque
 
 ## Example 2
 
-### Add a word from a specific picture to the existing deck
+### Add a word from a picture to the existing deck
+
+![Picture](images/gadatsveva.jpg)
 
 #### 1. Extract Georgian text from the image
 ```bash
