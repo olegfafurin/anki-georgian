@@ -59,7 +59,7 @@ python3 src/anki_ge.py create-deck new_words.txt --update "My_Georgian_Deck.apkg
 
 ### Georgian Frequency Dictionary Set
 
-[Dataset](text/georgian_freq_list_4_100.txt) credits: [@akalongman](https://github.com/akalongman/geo-words)
+[Dataset](text/georgian_freq_list.txt) credits: [@akalongman](https://github.com/akalongman/geo-words)
 
 #### 1. Transliteration
 ```bash
