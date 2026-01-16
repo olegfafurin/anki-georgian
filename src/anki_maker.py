@@ -107,10 +107,10 @@ def create_deck(input_file, output_deck_name):
     except Exception as e:
         logging.error(f"Error creating Anki deck: {e}")
 
-def update_deck(input_file, existing_deck_path, output_deck_name):
+def update_deck(input_file, existing_deck_path):
     """
     Merges new cards from input_file into existing_deck_path, preserving existing entries.
-    Generates a new .apkg file.
+    Updates the .apkg file in-place.
     """
     # 1. Read new notes
     new_notes = {}
@@ -146,8 +146,10 @@ def update_deck(input_file, existing_deck_path, output_deck_name):
     logging.info(f"Adding {added_count} new notes.")
 
     # 4. Generate Deck
+    # Use filename as deck name since we are updating in place
+    deck_name = os.path.splitext(os.path.basename(existing_deck_path))[0]
     deck_id = random.randrange(1 << 30, 1 << 31)
-    deck = genanki.Deck(deck_id, output_deck_name)
+    deck = genanki.Deck(deck_id, deck_name)
 
     for geo, cyr in merged_notes.items():
         note = genanki.Note(
@@ -156,6 +158,5 @@ def update_deck(input_file, existing_deck_path, output_deck_name):
         )
         deck.add_note(note)
 
-    output_file = f"{output_deck_name.replace(' ', '_')}.apkg"
-    genanki.Package(deck).write_to_file(output_file)
-    logging.info(f"Updated deck created successfully: {output_file}")
+    genanki.Package(deck).write_to_file(existing_deck_path)
+    logging.info(f"Updated deck saved to: {existing_deck_path}")

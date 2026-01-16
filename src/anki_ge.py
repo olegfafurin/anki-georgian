@@ -13,7 +13,7 @@ def transliterate_command(args):
 
 def create_deck_command(args):
     if args.update:
-        update_deck(args.input, args.update, args.name)
+        update_deck(args.input, args.update)
     else:
         create_deck(args.input, args.name)
 

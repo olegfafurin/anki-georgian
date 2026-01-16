@@ -3,8 +3,8 @@
 A command-line tool to automate the creation of Anki flashcards for learning the Georgian alphabet. It extracts Georgian text from images, transliterates it to Cyrillic, and generates ready-to-import Anki decks (`.apkg`).
 
 ## Features
-*   **OCR Extraction:** Extract Georgian text from images using Tesseract (supports modern and old scripts).
-*   **Transliteration:** Automatically transliterates Georgian characters (modern Mkhedruli script, 33 symbols) to their Cyrillic approximations.
+*   **OCR Extraction:** Extract Georgian text from images using Tesseract. (modern Mkhedruli script, 33 symbols)
+*   **Transliteration:** Automatically transliterates Georgian characters to their Cyrillic approximations.
 *   **Deck Generation:** Create new Anki decks or update existing ones with new cards.
 
 ## Setup (Linux)
